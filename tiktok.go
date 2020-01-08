@@ -11,6 +11,7 @@ const (
 	reqEmbedUri = "/oembed"
 )
 
+// Response contains all the embedded object properties
 type Response struct {
 	Version         string `json:"version"`
 	Type            string `json:"type"`
@@ -27,14 +28,17 @@ type Response struct {
 	ProviderName    string `json:"provider_name"`
 }
 
+// TikTokService encapsulates settings for TikTok api calls
 type TikTokService struct {
 	host string
 }
 
+// NewTikTokService creates TikTokService with default settings
 func NewTikTokService() *TikTokService {
 	return &TikTokService{host: defaultHost}
 }
 
+// Embed allows you to get the embed code and additional information about the video associated with the webpage link provided
 func (s *TikTokService) Embed(params map[string]string) (*Response, error) {
 	client := &http.Client{}
 	req, err := http.NewRequest(http.MethodGet, s.host+reqEmbedUri, nil)
