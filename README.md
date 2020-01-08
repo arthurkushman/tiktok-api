@@ -3,7 +3,7 @@ TikTok api sdk for simple video embedding
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/arthurkushman/buildsqlx)](https://goreportcard.com/report/github.com/arthurkushman/tiktok-api)
 [![GoDoc](https://github.com/golang/gddo/blob/c782c79e0a3c3282dacdaaebeff9e6fd99cb2919/gddo-server/assets/status.svg)](https://godoc.org/github.com/arthurkushman/tiktok-api)
-[![codecov](https://codecov.io/gh/arthurkushman/buildsqlx/branch/master/graph/badge.svg)](https://codecov.io/gh/arthurkushman/tiktok-api)
+[![codecov](https://codecov.io/gh/arthurkushman/tiktok-api/branch/master/graph/badge.svg)](https://codecov.io/gh/arthurkushman/tiktok-api)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ### Installation
