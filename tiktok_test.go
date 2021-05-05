@@ -26,6 +26,10 @@ func TestTikTokService_Embed(t *testing.T) {
 	assert.Equal(t, resp.ProviderName, r.ProviderName)
 }
 
+var ttsMocked = func() *TikTokService {
+	return &TikTokService{host: ""}
+}
+
 func TestTikTokService_Errors(t *testing.T) {
 	tts := NewTikTokService()
 	resp, err := tts.Embed(map[string]string{
@@ -33,5 +37,10 @@ func TestTikTokService_Errors(t *testing.T) {
 	})
 	assert.Error(t, err)
 	assert.EqualError(t, err, "Couldn't embed video source from uri: https://foo-bar.bazzz")
+	assert.Nil(t, resp)
+
+	tts = ttsMocked()
+	resp, err = tts.Embed(map[string]string{})
+	assert.Error(t, err)
 	assert.Nil(t, resp)
 }
