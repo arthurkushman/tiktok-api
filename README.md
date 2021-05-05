@@ -14,14 +14,14 @@ go get -u github.com/arthurkushman/tiktok-api
 ### Usage
 To get an embedded content of any video:
 ```go
-    tts := NewTikTokService()
-	resp, err := tts.Embed(map[string]string{
-		"url": "https://www.tiktok.com/@scout2015/video/6718335390845095173",
-	})
-	
-	resp.Title // "Scramble up ur name & I’ll try to guess it😍❤️ #foryoupage #petsoftiktok #aesthetic"
-	resp.AuthorName // "Scout & Suki"
-	...
+tts := NewTikTokService()
+resp, err := tts.Embed(map[string]string{
+    "url": "https://www.tiktok.com/@scout2015/video/6718335390845095173",
+})
+
+resp.Title // "Scramble up ur name & I’ll try to guess it😍❤️ #foryoupage #petsoftiktok #aesthetic"
+resp.AuthorName // "Scout & Suki"
+// and more props - see Response structure bellow
 ```
 `resp` is a `Response` struct with all the fields filled-up e.g.:
 ```go

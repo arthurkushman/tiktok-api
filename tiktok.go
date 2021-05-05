@@ -2,6 +2,8 @@ package tiktok_api
 
 import (
 	"encoding/json"
+	"errors"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 )
@@ -67,5 +69,10 @@ func (s *TikTokService) Embed(params map[string]string) (*Response, error) {
 	if err != nil {
 		return nil, err
 	}
+
+	if r.Version == "" && r.ProviderName == "" && r.Title == "" {
+		return nil, errors.New(fmt.Sprintf("Couldn't embed video source from uri: %s", q.Get("url")))
+	}
+
 	return r, nil
 }

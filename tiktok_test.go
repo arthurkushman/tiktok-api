@@ -25,3 +25,13 @@ func TestTikTokService_Embed(t *testing.T) {
 	assert.Equal(t, resp.ProviderUrl, r.ProviderUrl)
 	assert.Equal(t, resp.ProviderName, r.ProviderName)
 }
+
+func TestTikTokService_Errors(t *testing.T) {
+	tts := NewTikTokService()
+	resp, err := tts.Embed(map[string]string{
+		"url": "https://foo-bar.bazzz",
+	})
+	assert.Error(t, err)
+	assert.EqualError(t, err, "Couldn't embed video source from uri: https://foo-bar.bazzz")
+	assert.Nil(t, resp)
+}
